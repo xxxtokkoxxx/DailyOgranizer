@@ -6,11 +6,11 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-COPY ["DailyOrganizer/DailyOrganizer.csproj", "DailyOrganizer/"]
-RUN dotnet restore "DailyOrganizer/DailyOrganizer.csproj"
+COPY ["DailyOgranizer/DailyOrganizer.csproj", "DailyOgranizer/"]
+RUN dotnet restore "DailyOgranizer/DailyOrganizer.csproj"
 
 COPY . .
-WORKDIR "/src/DailyOrganizer"
+WORKDIR "/src/DailyOgranizer"
 RUN dotnet build "DailyOrganizer.csproj" -c Release -o /app/build
 
 # Публікуємо додаток
